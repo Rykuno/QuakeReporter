@@ -10,11 +10,13 @@ import java.util.Date;
 public class Earthquake {
     private double mMagnitude;
     private String mLocation;
+    private String mUrl;
     private long mTimeInMilliseconds;
 
-    public Earthquake(double magnitude, String location, long timeInMilliseconds) {
+    public Earthquake(double magnitude, String location, String url, long timeInMilliseconds) {
         mMagnitude = magnitude;
         mLocation = location;
+        mUrl = url;
         mTimeInMilliseconds = timeInMilliseconds;
     }
 
@@ -62,4 +64,7 @@ public class Earthquake {
         return timeFormat.format(timeObject);
     }
 
+    public String getUrl() {
+        return mUrl;
+    }
 }
