@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Quake Report App
 ===================================
 
@@ -50,3 +51,7 @@ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
 License for the specific language governing permissions and limitations under
 the License.
+=======
+# QuakeReporter
+An app that reports recent earthquakes happening around the world with information such as magnitude, date, time, and proximity. Created for experimentation while taking the Udacity Android course.
+>>>>>>> 75efd8054becc57bba51d0b6f6a63826dfb8e114
