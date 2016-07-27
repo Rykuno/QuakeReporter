@@ -18,7 +18,11 @@ public class Earthquake {
         mTimeInMilliseconds = timeInMilliseconds;
     }
 
-    public String  getMagnitude() {
+    public double getMagnitude() {
+        return mMagnitude;
+    }
+
+    public String  getFormattedMagnitude() {
         DecimalFormat formatter = new DecimalFormat("0.0");
         String  formattedMagnitude = formatter.format(mMagnitude);
         return formattedMagnitude;
@@ -57,4 +61,5 @@ public class Earthquake {
         SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
         return timeFormat.format(timeObject);
     }
+
 }
