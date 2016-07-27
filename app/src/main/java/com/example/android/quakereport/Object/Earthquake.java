@@ -1,28 +1,60 @@
 package com.example.android.quakereport.Object;
 
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by rykuno on 7/26/16.
  */
 public class Earthquake {
-    private String mMagnitude;
+    private double mMagnitude;
     private String mLocation;
-    private String mDate;
+    private long mTimeInMilliseconds;
 
-    public Earthquake(String magnitude, String location, String date) {
+    public Earthquake(double magnitude, String location, long timeInMilliseconds) {
         mMagnitude = magnitude;
         mLocation = location;
-        mDate = date;
+        mTimeInMilliseconds = timeInMilliseconds;
     }
 
-    public String getMagnitude() {
-        return mMagnitude;
+    public String  getMagnitude() {
+        DecimalFormat formatter = new DecimalFormat("0.0");
+        String  formattedMagnitude = formatter.format(mMagnitude);
+        return formattedMagnitude;
     }
 
     public String getLocation() {
-        return mLocation;
+        if (mLocation.contains("of")) {
+            int loc = mLocation.indexOf("of") + 2;
+            String locationBearing = mLocation.substring(loc, mLocation.length());
+            return locationBearing;
+        }
+        else {
+            return mLocation;
+        }
     }
 
-    public String getDate() {
-        return mDate;
+    public String getLocationBearing(){
+        if (mLocation.contains("of")) {
+            int loc = mLocation.indexOf("of") + 2;
+            String locationBearing = mLocation.substring(0, loc);
+            return locationBearing;
+        }
+        else{
+            return "Near the";
+        }
+    }
+
+    public String getFormatDate() {
+        Date dateObject = new Date(mTimeInMilliseconds);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("LLL dd, yyyy");
+        return dateFormat.format(dateObject);
+    }
+
+    public String getFormatTime() {
+        Date timeObject = new Date(mTimeInMilliseconds);
+        SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
+        return timeFormat.format(timeObject);
     }
 }
