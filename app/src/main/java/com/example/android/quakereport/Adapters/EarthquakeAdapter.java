@@ -12,7 +12,6 @@ import com.example.android.quakereport.Object.Earthquake;
 import com.example.android.quakereport.R;
 
 import java.util.List;
-
 /**
  * Created by rykuno on 7/26/16.
  */
@@ -21,7 +20,6 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     public EarthquakeAdapter(Context context, List<Earthquake> objects) {
         super(context, 0, objects);
     }
-
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

@@ -8,6 +8,7 @@ import java.util.Date;
  * Created by rykuno on 7/26/16.
  */
 public class Earthquake {
+
     private double mMagnitude;
     private String mLocation;
     private String mUrl;
